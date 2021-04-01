@@ -17,6 +17,7 @@ To-do list:
 * Make image recognition to determine milk or not
 * Make arch. for capturing camera image and tranfering to input
 * Make funny result visualization with _spinning_ and __oval__ things!
+* Find milk pic dataset!
 
 ## Status
 Project is: very much _in progress_
