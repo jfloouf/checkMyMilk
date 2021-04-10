@@ -1,4 +1,4 @@
-# organize imports
+#%% organize imports
 from __future__ import print_function
 
 from sklearn.metrics import classification_report
@@ -115,3 +115,4 @@ sns.heatmap(cm,
             annot=True,
             cmap="Set2")
 plt.show()
+# %%

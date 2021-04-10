@@ -3,8 +3,8 @@
   "weights"         : "imagenet",
   "include_top"     : false,
 
-  "train_path"      : "milkData/dataset_minimized",
-  "test_path"       : "milkData/dataset_minimized",
+  "train_path"      : "milkData/dataset_minimized/train",
+  "test_path"       : "milkData/dataset_minimized/test_rand",
   "features_path"   : "output/xception/features.h5",
   "labels_path"     : "output/xception/labels.h5",
   "results"         : "output/xception/results.txt",

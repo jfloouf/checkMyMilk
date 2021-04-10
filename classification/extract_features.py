@@ -1,24 +1,22 @@
-# filter warnings
+#%% filter warnings
 import warnings
 warnings.simplefilter(action="ignore", category=FutureWarning)
-
-# keras imports
-from keras.applications.xception import Xception, preprocess_input
-from keras.preprocessing import image
-from keras.models import Model
-from keras.models import model_from_json
-from keras.layers import Input
 
 # other imports
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import glob
-import cv2
 import h5py
 import os
 import json
 import datetime
 import time
+os.path.abspath(os.getcwd())
+
+# keras imports
+from keras.applications.xception import Xception, preprocess_input
+from keras.preprocessing import image
+from keras.models import Model
 
 # load the user configs
 with open('conf.json') as f:    
@@ -44,7 +42,7 @@ start = time.time()
 # check for top layers to be included or not
 if model_name == "xception":
   base_model = Xception(weights=weights)
-  model = Model(input=base_model.input, output=base_model.get_layer('avg_pool').output)
+  model = Model(inputs=base_model.input, outputs=base_model.get_layer('avg_pool').output)
   image_size = (299, 299)
 else:
   base_model = None
