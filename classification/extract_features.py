@@ -62,22 +62,24 @@ features = []
 labels   = []
 
 # loop over all the labels in the folder
-count = 1
 for i, label in enumerate(train_labels):
-  cur_path = train_path + "/" + label
-  count = 1
-  for image_path in glob.glob(cur_path + "/*.jpg"):
-    img = image.load_img(image_path, target_size=image_size)
-    x = image.img_to_array(img)
-    x = np.expand_dims(x, axis=0)
-    x = preprocess_input(x)
-    feature = model.predict(x)
-    flat = feature.flatten()
-    features.append(flat)
-    labels.append(label)
-    print("[INFO] processed - " + str(count))
-    count += 1
-  print("[INFO] completed label - " + label)
+    cur_path = train_path + "/" + label
+    count = 1
+    for image_path in glob.glob(cur_path + "/*.jpg"):
+        try:
+            img = image.load_img(image_path, target_size=image_size)
+            x = image.img_to_array(img)
+            x = np.expand_dims(x, axis=0)
+            x = preprocess_input(x)
+            feature = model.predict(x)
+            flat = feature.flatten()
+            features.append(flat)
+            labels.append(label)
+            print("[INFO] processed - " + str(count))
+        except:
+            print("[INFO] Could not process - " + str(count))
+        count += 1 
+    print("[INFO] completed label - " + label)
 
 # encode the labels using LabelEncoder
 le = LabelEncoder()
