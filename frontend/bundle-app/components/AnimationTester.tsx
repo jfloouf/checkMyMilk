@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { AppButton } from "../../bundle-react/components/AppButton";
+import { SomeBookShit } from "../3DShit/Book/SomeBookShit";
+import { SomeBookShitI } from "../3DShit/BookImprovement/SomeBookShitI";
 import { NotMilkAnimation1 } from "../animations/not-milk/NotMilkAnimation1";
+import { NotMilkAnimation2 } from "../animations/not-milk/NotMilkAnimation2";
 import { TestMode } from "../types/TestMode";
-import { ModeSelect } from "./ModeSelect";
+import { AppButton } from '../../bundle-react/components/AppButton';
+import { ModeSelect } from './ModeSelect';
+import { Joseph } from './Joseph';
 
 const Root = styled.div`
   grid-area: animation-tester;
@@ -18,6 +22,10 @@ const Root = styled.div`
   width: 100%;
   /* padding: 2rem; */
   border: 1px solid black;
+
+  place-items: center;
+
+  perspective: 1000px;
 `;
 
 const Animation = styled.section`
@@ -63,6 +71,7 @@ export function AnimationTester(props: Props) {
     switch (mode) {
       case TestMode.NOT_MILK:
         return <NotMilkAnimation1></NotMilkAnimation1>;
+        return <NotMilkAnimation2></NotMilkAnimation2>;
       case TestMode.IS_THIS_MILK:
       case TestMode.MILK_BAD:
       case TestMode.MILK_GOOD:
@@ -84,12 +93,13 @@ export function AnimationTester(props: Props) {
 
   return (
     <Root>
-      <Animation>{testAnimation && animation()}</Animation>
+    {  <SomeBookShitI></SomeBookShitI>}
+      {/* <Animation>{testAnimation && animation()}</Animation>
       <Controls>
         {testAnimation && <Prompt>{prompt()}</Prompt>}
         <AppButton onClick={onClick}>Test animation</AppButton>
         <ModeSelect selected={mode} onSelect={setMode}></ModeSelect>
-      </Controls>
+      </Controls>  */}
     </Root>
   );
 }
