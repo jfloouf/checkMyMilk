@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'reset-css';
 import styled from 'styled-components';
-import { TestMode } from '../bundle-app/types/TestMode';
-import { ModeSelect } from '../bundle-app/components/ModeSelect';
-import { AnimationTester} from '../bundle-app/components/AnimationTester';
-import { SomeBookShitI } from '../bundle-app/3DShit/BookImprovement/SomeBookShitI';
 import { SomeBookShit } from '../bundle-app/3DShit/Book/SomeBookShit';
+import { SomeBookShitII } from '../bundle-app/3DShit/BookII/SomeBookShitII';
 
 const Root = styled.div`
 /* 
@@ -34,7 +31,7 @@ export default function Home() {
   return (
     <Root>
       <SomeBookShit></SomeBookShit>
-      <SomeBookShitI></SomeBookShitI>
+      <SomeBookShitII></SomeBookShitII>
     </Root>
   )
 }
